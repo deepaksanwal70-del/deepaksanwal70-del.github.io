@@ -1,15 +1,18 @@
 window.addEventListener("scroll", reveal);
 
 function reveal() {
-  const items = document.querySelectorAll(".reveal");
+  const reveals = document.querySelectorAll(".reveal");
   const windowHeight = window.innerHeight;
 
-  items.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 150) {
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
       el.classList.add("active");
     }
   });
 }
 
-reveal();
+reveal(); // page load par bhi run
+
