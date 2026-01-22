@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -13,7 +9,7 @@ body {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url("images/hero-bg.png.jpg") center/cover;
+  background: url("image/hero-bg.png.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,23 +24,13 @@ body {
   background: rgba(0,0,0,0.6);
 }
 
-.hero h1,
-.hero p,
-.hero a {
+.hero h1, .hero p, .hero a {
   position: relative;
   z-index: 1;
 }
 
-.hero h1 {
-  font-size: 70px;
-  letter-spacing: 3px;
-}
-
-.hero p {
-  font-size: 22px;
-  margin-top: 10px;
-  color: #ddd;
-}
+.hero h1 { font-size: 70px; letter-spacing: 3px; }
+.hero p { font-size: 22px; margin-top: 10px; color: #ddd; }
 
 .btn {
   margin-top: 30px;
@@ -57,9 +43,7 @@ body {
   transition: 0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.15);
-}
+.btn:hover { transform: scale(1.15); }
 
 /* SECTIONS */
 section {
@@ -69,7 +53,9 @@ section {
 
 h2 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  color: #ff9800;
+  text-transform: uppercase;
 }
 
 /* SKILLS */
@@ -82,41 +68,38 @@ h2 {
 }
 
 /* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.project {
+.project-card {
   background: #161616;
   padding: 15px;
   border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.project img {
+.project-card:hover { transform: translateY(-10px); }
+
+.project-card img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-.project h3 {
-  margin-top: 10px;
+.project-card h3 {
+  margin-top: 12px;
+  font-size: 18px;
+  color: white;
 }
 
 /* ANIMATION */
-.fade-in {
-  opacity: 0;
-  animation: fade 1s forwards;
-}
-
-.delay {
-  animation-delay: 0.5s;
-}
-
-@keyframes fade {
-  to { opacity: 1; }
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -130,7 +113,6 @@ h2 {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 42px;
-  }
+  .hero h1 { font-size: 42px; }
+  .project-card { width: 100%; max-width: 300px; }
 }
