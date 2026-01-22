@@ -1,18 +1,15 @@
 window.addEventListener("scroll", reveal);
 
 function reveal() {
-  const reveals = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
 
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 150;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
+  items.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < windowHeight - 150) {
+      el.classList.add("active");
     }
-  }
+  });
 }
 
-// page load pe bhi run ho
 reveal();
