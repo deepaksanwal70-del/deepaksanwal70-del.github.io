@@ -88,37 +88,102 @@ h2 {
   border-radius: 30px;
 }
 
-/* PROJECTS */
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.project-card {
-  background: #161616;
-  padding: 15px;
-  border-radius: 15px;
-  width: 250px;
+.skills {
+  background: white;
+  color: black;
   text-align: center;
-  transition: transform 0.3s;
 }
 
-.project-card:hover { transform: translateY(-10px); }
+.skill {
+  max-width: 600px;
+  margin: 25px auto;
+  text-align: left;
+}
 
+.skill span {
+  font-weight: 600;
+}
+
+.skill-bar {
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background:green;
+  border-radius: 20px;
+  transition: width 1.5s ease;
+}
+
+/* SKILL LEVELS */
+.skill-fill.html { width: 90%; }
+.skill-fill.css { width: 85%; }
+.skill-fill.js { width: 75%; }
+.skill-fill.responsive { width: 88%; }
+
+@media (max-width: 768px) {
+  .skill {
+    max-width: 90%;
+  }
+}
+
+
+
+/* PROJECTS */
+.projects {
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+/* slider box */
+.project-slider {
+  overflow: hidden;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* moving track */
+.project-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: slide 18s linear infinite;
+}
+
+/* project card */
+.project-card {
+  min-width: 320px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  transition: transform 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* image */
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0; /* no black border */
 }
 
+/* title */
 .project-card h3 {
-  margin-top: 12px;
+  padding: 15px;
   font-size: 18px;
-  color: white;
 }
+
 
 /* ANIMATION */
 .reveal {
@@ -152,10 +217,6 @@ footer p {
   margin: 0;
   opacity: 0.8;
 }
-
-
-
-
 
 /* NAVBAR */
 .navbar {
@@ -226,10 +287,118 @@ footer p {
 
 html {
   scroll-behavior: smooth;
+
 }
+
 .hero h1 {
   font-size: clamp(36px, 6vw, 70px);
   line-height: 1.2;
 }
+
+.about {
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.about-stats h3 {
+  font-size: 32px;
+  color: #ff9800;
+}
+
+.about-stats p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.why-hire {
+  background: #f9f9f9;
+  color: black;
+  text-align: center;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.why-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+}
+
+.why-card h3 {
+  background: linear-gradient(90deg, #111, #e9069a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+}
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 260px;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* hover pe pause */
+.project-slider:hover .project-track {
+  animation-play-state: paused;
+}
+
+
+
+
+
+
 
 
