@@ -137,3 +137,94 @@ h2 {
   .hero h1 { font-size: 42px; }
   .project-card { width: 100%; max-width: 300px; }
 }
+
+footer {
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  padding: 25px 10px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;          /* pure white */
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* GOLDEN HOVER LINE */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff9800;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff9800;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+
+
+
+}
+
+/* ACTIVE NAV LINK */
+.navbar ul li a.active {
+  color: #ff9800;
+}
+
+.navbar ul li a.active::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 18px;
+    font-size: 14px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
