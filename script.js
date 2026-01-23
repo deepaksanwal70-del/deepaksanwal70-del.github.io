@@ -39,5 +39,20 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const skillSection = document.querySelector("#skills");
+const skillBars = document.querySelectorAll(".skill-fill");
 
+window.addEventListener("scroll", () => {
+  const sectionTop = skillSection.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (sectionTop < windowHeight - 100) {
+    skillBars.forEach(bar => {
+      bar.style.width = bar.classList.contains("html") ? "90%" :
+                        bar.classList.contains("css") ? "85%" :
+                        bar.classList.contains("js") ? "75%" :
+                        "88%";
+    });
+  }
+});
 
