@@ -227,4 +227,9 @@ footer p {
 html {
   scroll-behavior: smooth;
 }
+.hero h1 {
+  font-size: clamp(36px, 6vw, 70px);
+  line-height: 1.2;
+}
+
 
