@@ -111,6 +111,21 @@ If you're looking for a developer who cares about design, performance, and detai
   </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="projects reveal" id="projects">
   <h2>Featured Projects</h2>
 
@@ -149,7 +164,38 @@ If you're looking for a developer who cares about design, performance, and detai
 </section>
 
 <script src="script.js"></script>
+
+<button id="darkBtn" class="dark-btn">🌙</button>
+<script>
+  const darkBtn = document.getElementById("darkBtn");
+
+  // page reload pe yaad rakhe
+  if (localStorage.getItem("mode") === "dark") {
+    document.body.classList.add("dark");
+    darkBtn.textContent = "☀️";
+    darkBtn.style.color = "#FFD700";
+  }
+
+  darkBtn.onclick = () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("mode", "dark");
+      darkBtn.textContent = "☀️";
+      darkBtn.style.color = "#FFD700";
+    } else {
+      localStorage.setItem("mode", "light");
+      darkBtn.textContent = "🌙";
+      darkBtn.style.color = "#FFD700";
+    }
+  };
+</script>
+
+
 </body>
+
+
+
 </html>
 <nav class="navbar">
   <ul>
