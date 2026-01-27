@@ -397,6 +397,87 @@ html {
 
 
 
+/* DARK MODE FLOATING BUTTON */
+.dark-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #000;        /* PURE BLACK */
+  color: #FFD700;          /* YELLOW MOON */
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.dark-btn:hover {
+  transform: scale(1.1);
+}
+
+/* DARK MODE BODY */
+body.dark {
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+body.dark section,
+body.dark header,
+body.dark footer {
+  background: #0b0b0b;
+}
+
+body.dark a {
+  color: #ffffff;
+}
+
+body.dark .project,
+body.dark .card,
+body.dark .box {
+  background: #151515;
+}
+/* DARK MODE TEXT FIX */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark span,
+body.dark li,
+body.dark a {
+  color: #ffffff !important;
+}
+
+/* EXCEPTION FOR WHY HIRE ME */
+body.dark .why-hire h3,
+body.dark .why-hire p {
+  color: #000000 !important;
+}
+
+body.dark .why-hire {
+  background: #000000;
+}
+
+
+/* DARK MODE – NAVBAR FINAL FIX */
+body.dark .navbar {
+  background: #000000 !important;
+}
+
+body.dark .navbar a,
+body.dark .navbar .logo {
+  color: #ffffff !important;
+}
+
+
+
+
 
 
 
